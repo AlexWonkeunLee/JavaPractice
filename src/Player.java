@@ -13,10 +13,10 @@ public class Player {
     }
 
     public Player(String name, int startingLevel){
-        handleName = name;
-        lives = 3;
-        level = startingLevel;
-        score = 0;
+        this.handleName = name;
+        this.lives = 3;
+        this.level = startingLevel;
+        this.score = 0;
     }
 
 
@@ -29,7 +29,7 @@ public class Player {
         if(newName.length() < 4){
             return;
         }
-        handleName = newName;
+        this.handleName = newName;
     }
 
     public int getLives(){

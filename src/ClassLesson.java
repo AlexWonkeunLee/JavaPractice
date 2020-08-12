@@ -15,5 +15,9 @@ public class ClassLesson {
         System.out.println(greg.getHandleName());
         System.out.println(greg.getLevel());
         System.out.println(greg.getScore());
+        greg.setLevel(5);
+        greg.setScore(4000);
+        System.out.println(greg.getLevel());
+        System.out.println(greg.getScore());
     }
 }
