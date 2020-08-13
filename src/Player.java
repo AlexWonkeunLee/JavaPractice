@@ -3,6 +3,8 @@ public class Player {
     private int lives;
     private int level;
     private int score;
+    private Weapon weapon;
+
 
     public Player() {
         this("Unknown player");
@@ -13,7 +15,7 @@ public class Player {
     }
 
     public Player(String name, int startingLevel){
-        this.handleName = name;
+        setHandleName(name);
         this.lives = 3;
         this.level = startingLevel;
         this.score = 0;
@@ -30,6 +32,11 @@ public class Player {
             return;
         }
         this.handleName = newName;
+        setDefaultWeapon();
+    }
+
+    private void setDefaultWeapon() {
+        this.weapon = new Weapon("Sword", 10, 20);
     }
 
     public int getLives(){
@@ -54,5 +61,13 @@ public class Player {
 
     public void setScore(int score) {
         this.score = score;
+    }
+
+    public Weapon getWeapon() {
+        return weapon;
+    }
+
+    public void setWeapon(Weapon weapon) {
+        this.weapon = weapon;
     }
 }

@@ -19,5 +19,16 @@ public class ClassLesson {
         greg.setScore(4000);
         System.out.println(greg.getLevel());
         System.out.println(greg.getScore());
+
+        Player blue = new Player("blue");
+        Weapon blueWeapon = blue.getWeapon();
+        System.out.println(blueWeapon.getName());
+        System.out.println(blue.getWeapon().getName());
+        Weapon blueNewWeapon = new Weapon("Spear", 20, 10);
+        blue.setWeapon(blueNewWeapon);
+        System.out.println(blue.getWeapon().getName());
+        System.out.println(blue.getWeapon().getDamage());
+
+
     }
 }
