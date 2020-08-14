@@ -90,6 +90,16 @@ public class Player {
         return false;
     }
 
+    public boolean dropLoot(String name){
+        for (Loot loot : inventory){
+            if(loot.getName().equals(name)){
+                inventory.remove(loot);
+                return true;
+            }
+        }
+        return false;
+    }
+
     public void showInventory(){
         for(Loot item : inventory){
             System.out.println(item.getName());
