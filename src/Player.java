@@ -95,4 +95,13 @@ public class Player {
             System.out.println(item.getName());
         }
     }
+
+    public int score(){
+        int total = 0;
+        for (Loot currentLoot : inventory) {
+            System.out.println(currentLoot.getName() + " is worth " + currentLoot.getValue());
+            total = total + currentLoot.getValue();
+        }
+        return total;
+    }
 }

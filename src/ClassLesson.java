@@ -47,15 +47,40 @@ public class ClassLesson {
 //        enemy.showInfo();
 //        enemy.takeDamage(3);
 //        enemy.takeDamage(7);
-        Troll uglyTroll = new Troll("Ugly Troll");
-        uglyTroll.showInfo();
-        Vampire vlad = new Vampire("vlad");
-        vlad.showInfo();
-        vlad.takeDamage(6);
+//        Troll uglyTroll = new Troll("Ugly Troll");
+//        uglyTroll.showInfo();
+//        Vampire vlad = new Vampire("vlad");
+//        vlad.showInfo();
+//        vlad.takeDamage(6);
         VampireKing dracula = new VampireKing(("Dracula"));
         dracula.showInfo();
         dracula.takeDamage(20);
 
+
+        do {
+            if(dracula.dodge()){
+                dracula.setLives(dracula.getLives() + 1);
+                continue;
+            }
+            if(dracula.runAway()){
+                System.out.println("Dracula ran away...");
+                break;
+            }
+            else{
+                dracula.takeDamage(20);
+                dracula.showInfo();
+            }
+
+        } while (dracula.getLives() > 0);
+
+        Player blue = new Player("Blue");
+        blue.pickUpLoot(new Loot("Invisibility", LootType.POTION, 5));
+        blue.pickUpLoot(new Loot("Fire Armor", LootType.ARMOR, 400));
+        blue.pickUpLoot(new Loot("Health", LootType.POTION, 3));
+        blue.pickUpLoot(new Loot("Ring of Strength", LootType.RING, 200));
+        blue.pickUpLoot(new Loot("Ring of Speed", LootType.RING, 200));
+
+        System.out.println(blue.score());
 
     }
 }
