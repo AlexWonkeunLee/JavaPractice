@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class ClassLesson {
     public static void main(String[] args) {
         Player bob = new Player();
@@ -28,6 +30,19 @@ public class ClassLesson {
         blue.setWeapon(blueNewWeapon);
         System.out.println(blue.getWeapon().getName());
         System.out.println(blue.getWeapon().getDamage());
+
+        Player orange = new Player("orange");
+        Loot redPotion = new Loot("Red Potion", LootType.POTION, 7);
+        orange.pickUpLoot(redPotion);
+        orange.pickUpLoot(new Loot("+3 Chest Armor", LootType.ARMOR, 80));
+        orange.pickUpLoot(new Loot("Ring of Protection +2", LootType.RING, 40));
+        orange.pickUpLoot(new Loot("Blue Potion", LootType.POTION, 10));
+        orange.showInventory();
+        boolean wasDeleted = orange.dropLoot(redPotion);
+        System.out.println(wasDeleted);
+        orange.showInventory();
+
+
 
 
     }
